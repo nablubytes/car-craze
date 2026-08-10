@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CAR CRAZE product details">
+    <meta name="theme-color" content="#ff6a00">
+    <title>CAR CRAZE | Product</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/product-details.css">
+</head>
+<body>
+
+<header class="product-header">
+    <a href="index.html" class="product-brand">
+        <img src="assets/images/logo/car-craze-logo.png" alt="CAR CRAZE">
+    </a>
+    <a href="index.html" class="back-store">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back to Store
+    </a>
+</header>
+
+<main>
+    <div id="productPage" class="product-page">
+        <div class="loading-state">
+            <div class="loading-spinner"></div>
+            <p>Loading product...</p>
+        </div>
+    </div>
+
+    <section class="details-location-section">
+        <div class="details-container">
+            <div class="details-section-heading">
+                <span>VISIT CAR CRAZE</span>
+                <h2>Get It Installed <strong>Here.</strong></h2>
+                <p>After placing your order, visit us for fitting and installation.</p>
+            </div>
+
+            <div class="details-location-card">
+                <div class="details-location-map">
+                    <iframe
+                        title="CAR CRAZE location map"
+                        src="https://www.google.com/maps?q=Car%20Craze%20Nettor%20Ernakulam&output=embed"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+                <div class="details-location-copy">
+                    <span><i class="fa-solid fa-location-dot"></i> STORE LOCATION</span>
+                    <h3>CAR CRAZE</h3>
+                    <p>Nettor, Ernakulam, Kerala, India</p>
+                    <a href="https://maps.app.goo.gl/heQ5rSSPRQRsfebe8" target="_blank" rel="noopener noreferrer" class="location-button">
+                        <i class="fa-solid fa-location-arrow"></i>
+                        Open Google Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="bookingConfirmation" class="booking-confirmation" hidden>
+        <div class="confirmation-inner">
+            <div class="confirmation-icon"><i class="fa-solid fa-check"></i></div>
+            <span>BOOKING REQUEST READY</span>
+            <h2>Your WhatsApp request is ready.</h2>
+            <p>We have kept the store location below so you can find us easily.</p>
+        </div>
+    </section>
+</main>
+
+<div id="orderOverlay" class="order-overlay" aria-hidden="true">
+    <div class="order-modal" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
+        <button id="orderClose" class="order-close" type="button" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="order-heading">
+            <span>BOOK YOUR INSTALLATION</span>
+            <h2 id="orderTitle">Tell us about your car.</h2>
+            <p id="orderProductName">Selected product</p>
+        </div>
+
+        <form id="orderForm" class="order-form">
+            <div id="orderError" class="order-error"></div>
+
+            <div class="form-grid">
+                <label>
+                    <span>Vehicle Name <b>*</b></span>
+                    <input id="vehicleName" type="text" placeholder="e.g. Toyota Fortuner" required>
+                </label>
+
+                <label>
+                    <span>Year <b>*</b></span>
+                    <input id="vehicleYear" type="number" min="1980" max="2100" placeholder="e.g. 2024" required>
+                </label>
+            </div>
+
+            <label>
+                <span>Variant</span>
+                <input id="vehicleVariant" type="text" placeholder="e.g. Legender / ZX / VXI">
+            </label>
+
+            <div class="booking-box">
+                <div class="booking-title">
+                    <i class="fa-regular fa-calendar"></i>
+                    <div>
+                        <strong>Schedule Booking</strong>
+                        <small>We are closed on Sundays.</small>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <label>
+                        <span>Date <b>*</b></span>
+                        <input id="bookingDate" type="date" required>
+                    </label>
+
+                    <label>
+                        <span>Time <b>*</b></span>
+                        <select id="bookingTime" required>
+                            <option value="">Select a time</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+
+            <button class="submit-order" type="submit">
+                <i class="fa-brands fa-whatsapp"></i>
+                Continue on WhatsApp
+            </button>
+        </form>
+    </div>
+</div>
+
+<script src="js/product-details.js"></script>
+</body>
+</html>

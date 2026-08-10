@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Car Craze | Admin Login</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="admin.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <main class="login-page">
+
+
+        <!-- LEFT BRANDING SECTION -->
+
+        <section class="login-brand">
+
+
+            <div class="brand-content">
+
+
+                <div class="brand-logo">
+
+                    <img
+                        src="../assets/images/logo/car-craze-logo.png"
+                        alt="Car Craze Logo"
+                    >
+
+                </div>
+
+
+                <h1>
+                    CAR CRAZE
+                </h1>
+
+
+                <p>
+                    All Car Accessories Under One Roof
+                </p>
+
+
+                <div class="brand-line"></div>
+
+
+                <span>
+                    ADMIN CONTROL PANEL
+                </span>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- LOGIN SECTION -->
+
+        <section class="login-section">
+
+
+            <div class="login-card">
+
+
+                <div class="login-heading">
+
+                    <span class="login-label">
+                        WELCOME BACK
+                    </span>
+
+                    <h2>
+                        Admin Login
+                    </h2>
+
+                    <p>
+                        Sign in to manage your Car Craze store.
+                    </p>
+
+                </div>
+
+
+
+                <!-- LOGIN FORM -->
+
+                <form
+                    id="loginForm"
+                    class="login-form"
+                >
+
+
+                    <!-- USERNAME -->
+
+                    <div class="form-group">
+
+                        <label
+                            for="username"
+                        >
+                            Username
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+
+                            <span class="input-icon">
+                                👤
+                            </span>
+
+
+                            <input
+                                type="text"
+                                id="username"
+                                name="username"
+                                placeholder="Enter your username"
+                                autocomplete="username"
+                                required
+                            >
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="form-group">
+
+                        <label
+                            for="password"
+                        >
+                            Password
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+
+                            <span class="input-icon">
+                                🔒
+                            </span>
+
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+                                class="toggle-password"
+                                aria-label="Show password"
+                            >
+                                👁️
+                            </button>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ERROR MESSAGE -->
+
+                    <div
+                        id="loginMessage"
+                        class="login-message"
+                    ></div>
+
+
+
+                    <!-- LOGIN BUTTON -->
+
+                    <button
+                        type="submit"
+                        id="loginButton"
+                        class="login-button"
+                    >
+
+                        <span
+                            id="loginButtonText"
+                        >
+                            LOGIN TO DASHBOARD
+                        </span>
+
+                    </button>
+
+
+                </form>
+
+
+
+                <div class="login-footer">
+
+                    <span>
+                        Car Craze Admin Panel
+                    </span>
+
+                    <span>
+                        © 2026 Car Craze
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <script
+        src="admin.js"
+    ></script>
+
+
+</body>
+
+</html>

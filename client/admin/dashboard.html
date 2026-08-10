@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Car Craze | Admin Dashboard</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="dashboard.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
+
+
+        <div class="sidebar-logo">
+
+
+            <img
+                src="../assets/images/logo/car-craze-logo.png"
+                alt="Car Craze"
+            >
+
+
+            <div>
+
+                <h1>
+                    CAR CRAZE
+                </h1>
+
+                <span>
+                    ADMIN PANEL
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+
+        <nav class="sidebar-nav">
+
+
+            <button
+                class="nav-item active"
+                data-section="dashboard"
+            >
+
+                <span class="nav-icon">
+                    📊
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </button>
+
+
+
+            <button
+                class="nav-item"
+                data-section="products"
+            >
+
+                <span class="nav-icon">
+                    🛍️
+                </span>
+
+                <span>
+                    Products
+                </span>
+
+            </button>
+
+
+
+            <button
+                class="nav-item"
+                data-section="categories"
+            >
+
+                <span class="nav-icon">
+                    📂
+                </span>
+
+                <span>
+                    Categories
+                </span>
+
+            </button>
+
+
+
+            <button
+                class="nav-item"
+                data-section="banners"
+            >
+
+                <span class="nav-icon">
+                    🖼️
+                </span>
+
+                <span>
+                    Banners
+                </span>
+
+            </button>
+
+
+
+            <button
+                class="nav-item"
+                data-section="featured"
+            >
+
+                <span class="nav-icon">
+                    ⭐
+                </span>
+
+                <span>
+                    Featured Products
+                </span>
+
+            </button>
+
+
+        </nav>
+
+
+
+        <div class="sidebar-bottom">
+
+
+            <div class="admin-user">
+
+
+                <div class="user-avatar">
+                    👤
+                </div>
+
+
+                <div>
+
+                    <strong id="adminUsername">
+                        Admin
+                    </strong>
+
+                    <span>
+                        Administrator
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <button
+                id="logoutButton"
+                class="logout-button"
+            >
+
+                🚪
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =========================================
+         MOBILE OVERLAY
+    ========================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- TOP HEADER -->
+
+        <header class="top-header">
+
+
+            <button
+                class="menu-button"
+                id="menuButton"
+            >
+
+                ☰
+
+            </button>
+
+
+            <div class="header-title">
+
+                <span>
+                    CAR CRAZE
+                </span>
+
+                <h2 id="pageTitle">
+                    Dashboard
+                </h2>
+
+            </div>
+
+
+            <a
+                href="../index.html"
+                target="_blank"
+                class="view-store"
+            >
+
+                🌐
+
+                View Store
+
+            </a>
+
+
+        </header>
+
+
+
+        <!-- =========================================
+             DASHBOARD SECTION
+        ========================================== -->
+
+        <section
+            class="dashboard-section active-section"
+            id="dashboardSection"
+        >
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span>
+                        OVERVIEW
+                    </span>
+
+                    <h2>
+                        Store Dashboard
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    Welcome back to your Car Craze control center.
+                </p>
+
+            </div>
+
+
+
+            <!-- STAT CARDS -->
+
+            <div class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+                        🛍️
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Products
+                        </span>
+
+                        <strong id="totalProducts">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon yellow">
+                        📂
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Categories
+                        </span>
+
+                        <strong id="totalCategories">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        📦
+                    </div>
+
+                    <div>
+
+                        <span>
+                            In Stock
+                        </span>
+
+                        <strong id="inStockProducts">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        ⭐
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Featured
+                        </span>
+
+                        <strong id="featuredProducts">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- QUICK ACTIONS -->
+
+            <div class="content-card">
+
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span>
+                            QUICK ACTIONS
+                        </span>
+
+                        <h3>
+                            Manage Your Store
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="quick-actions">
+
+
+                    <button
+                        class="quick-action"
+                        data-section="products"
+                    >
+
+                        <span>
+                            🛍️
+                        </span>
+
+                        <strong>
+                            Add Product
+                        </strong>
+
+                        <small>
+                            Upload a new product
+                        </small>
+
+                    </button>
+
+
+
+                    <button
+                        class="quick-action"
+                        data-section="categories"
+                    >
+
+                        <span>
+                            📂
+                        </span>
+
+                        <strong>
+                            Add Category
+                        </strong>
+
+                        <small>
+                            Create category or subcategory
+                        </small>
+
+                    </button>
+
+
+
+                    <button
+                        class="quick-action"
+                        data-section="banners"
+                    >
+
+                        <span>
+                            🖼️
+                        </span>
+
+                        <strong>
+                            Manage Banners
+                        </strong>
+
+                        <small>
+                            Update homepage banners
+                        </small>
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             PRODUCTS SECTION
+        ========================================== -->
+
+        <section
+            class="dashboard-section"
+            id="productsSection"
+        >
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span>
+                        STORE MANAGEMENT
+                    </span>
+
+                    <h2>
+                        Products
+                    </h2>
+
+                </div>
+
+
+                <button
+                    class="primary-button"
+                    id="addProductButton"
+                >
+
+                    + Add Product
+
+                </button>
+
+            </div>
+
+
+
+            <div class="content-card">
+
+
+                <div
+                    id="productGrid"
+                    class="product-grid"
+                >
+
+                    <p class="loading-text">
+                        Loading products...
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             PRODUCT MODAL (Add / Edit)
+        ========================================== -->
+
+        <div
+            class="modal-overlay"
+            id="productModalOverlay"
+        >
+
+            <div class="modal">
+
+                <div class="modal-header">
+
+                    <h3 id="productModalTitle">
+                        Add Product
+                    </h3>
+
+                    <button
+                        type="button"
+                        class="modal-close"
+                        id="closeProductModal"
+                    >
+                        ✕
+                    </button>
+
+                </div>
+
+                <form id="productForm">
+
+                    <input
+                        type="hidden"
+                        id="productId"
+                    >
+
+                    <div class="form-group">
+                        <label>Product Name</label>
+                        <input
+                            type="text"
+                            id="productName"
+                            placeholder="Example: Sony XAV AX3200"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label>MRP (₹)</label>
+                            <input
+                                type="number"
+                                id="productMrp"
+                                min="0"
+                                step="0.01"
+                                placeholder="5999"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label>Selling Price (₹)</label>
+                            <input
+                                type="number"
+                                id="productSellingPrice"
+                                min="0"
+                                step="0.01"
+                                placeholder="4999"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label>Stock Quantity</label>
+                            <input
+                                type="number"
+                                id="productStock"
+                                min="0"
+                                placeholder="10"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label>Category</label>
+                            <select id="productCategory" required>
+                                <option value="">Select category</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label>Subcategory</label>
+                        <select id="productSubcategory" required>
+                            <option value="">Select subcategory</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label>Brand</label>
+                            <input
+                                type="text"
+                                id="productBrand"
+                                placeholder="Example: Sony"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label>Warranty</label>
+                            <input
+                                type="text"
+                                id="productWarranty"
+                                placeholder="Example: 1 Year"
+                            >
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+                            Product Photos
+                            <span class="label-hint">(up to 5, auto-compressed)</span>
+                        </label>
+
+                        <div
+                            id="photoDropzone"
+                            class="photo-dropzone"
+                        >
+
+                            <div class="photo-dropzone-hint">
+
+                                <span>📷</span>
+
+                                <p>
+                                    Drag & drop photos here, or click to browse
+                                </p>
+
+                            </div>
+
+                            <input
+                                type="file"
+                                id="photoFileInput"
+                                accept="image/*"
+                                multiple
+                                hidden
+                            >
+
+                        </div>
+
+                        <div
+                            id="photoPreviewList"
+                            class="photo-preview-list"
+                        ></div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea
+                            id="productDescription"
+                            rows="3"
+                            placeholder="Short product description"
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label>
+                            <input
+                                type="checkbox"
+                                id="productFeatured"
+                            >
+                            Show in Featured Products
+                        </label>
+                    </div>
+
+                    <div class="modal-actions">
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="cancelProductForm"
+                        >
+                            Cancel
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                            id="saveProductButton"
+                        >
+                            Save Product
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =========================================
+             CATEGORIES SECTION
+        ========================================== -->
+
+        <section
+            class="dashboard-section"
+            id="categoriesSection"
+        >
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span>
+                        STORE STRUCTURE
+                    </span>
+
+                    <h2>
+                        Categories
+                    </h2>
+
+                </div>
+
+
+                <button
+                    class="primary-button"
+                    id="addCategoryButton"
+                >
+
+                    + Add Category
+
+                </button>
+
+            </div>
+
+
+
+            <div class="content-card">
+                <div class="category-manager">
+                    <!-- ADD CATEGORY FORM -->
+                    <div class="category-form-card">
+                        <h3>
+                            Create New Category
+                        </h3>
+                        <p>
+                            Add a main category and its subcategories.
+                        </p>
+                        <form id="categoryForm">
+                            <div class="form-group">
+                                <label>
+                                    Category Name
+                                </label>
+                                <input
+                                    type="text"
+                                    id="categoryName"
+                                    placeholder="Example: Interior Accessories"
+                                    required
+                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Subcategories
+                                </label>
+
+                                <div
+                                    id="subcategoryInputs"
+                                    class="subcategory-inputs"
+                >
+
+                                    <input
+                                        type="text"
+                                        class="subcategory-input"
+                                        placeholder="Example: Seat Covers"
+                    >
+
+                                </div>
+
+
+                                <button
+                                    type="button"
+                                    id="addSubcategoryButton"
+                                    class="secondary-button"
+                >
+
+                                    + Add Subcategory
+
+                                </button>
+
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="primary-button"
+            >
+
+                                Save Category
+
+                            </button>
+
+
+                        </form>
+
+
+                    </div>
+
+
+
+                    <!-- CATEGORY LIST -->
+
+                    <div class="category-list-card">
+
+
+                        <div class="card-header">
+
+                            <span>
+                                YOUR STORE
+                            </span>
+
+                            <h3>
+                                Categories & Subcategories
+                            </h3>
+
+                        </div>
+
+
+                        <div
+                            id="categoryList"
+                            class="category-list"
+        >
+
+                            <p class="loading-text">
+                                Loading categories...
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             BANNERS SECTION
+        ========================================== -->
+
+        <section
+            class="dashboard-section"
+            id="bannersSection"
+        >
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span>
+                        HOMEPAGE
+                    </span>
+
+                    <h2>
+                        Banners
+                    </h2>
+
+                </div>
+
+
+                <button
+                    class="primary-button"
+                    id="addBannerButton"
+                >
+
+                    + Add Banner
+
+                </button>
+
+            </div>
+
+
+
+            <div class="content-card">
+
+
+                <div class="empty-state">
+
+                    <div>
+                        🖼️
+                    </div>
+
+                    <h3>
+                        No Banners Loaded
+                    </h3>
+
+                    <p>
+                        Homepage banners uploaded from the admin panel will appear here.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             FEATURED PRODUCTS
+        ========================================== -->
+
+        <section
+            class="dashboard-section"
+            id="featuredSection"
+        >
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span>
+                        HOMEPAGE
+                    </span>
+
+                    <h2>
+                        Featured Products
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="content-card">
+
+
+                <div class="empty-state">
+
+                    <div>
+                        ⭐
+                    </div>
+
+                    <h3>
+                        Select Featured Products
+                    </h3>
+
+                    <p>
+                        Choose 10 to 15 products to display in the scrolling homepage section.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <script
+        src="dashboard.js"
+    ></script>
+
+
+</body>
+
+</html>
