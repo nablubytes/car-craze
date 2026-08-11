@@ -1,5 +1,5 @@
 const API_URL =
-    "http://localhost:5000";
+    "https://car-craze-api.onrender.com";
 
 
 // =====================================================

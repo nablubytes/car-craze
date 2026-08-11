@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000";
+const API_URL = "https://car-craze-api.onrender.com";
 const WHATSAPP_NUMBER = "919995060070";
 const LOCATION_URL = "https://maps.app.goo.gl/heQ5rSSPRQRsfebe8";
 
