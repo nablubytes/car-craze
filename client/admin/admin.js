@@ -1,5 +1,4 @@
-const API_URL =
-    "https://car-craze-api.onrender.com";
+const API_URL = "https://car-craze-api.onrender.com";
 
 
 // =====================================================
