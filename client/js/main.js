@@ -1424,7 +1424,7 @@ document.addEventListener("DOMContentLoaded", () => {
        21. LIVE STORE: PRODUCTS + CATEGORIES + SEARCH
        ===================================================== */
 
-    const STORE_API_URL = "http://localhost:5000";
+    const STORE_API_URL = "https://car-craze-api.onrender.com";
     let storeProducts = [];
     let storeCategories = [];
     let activeProductFilter = null;
