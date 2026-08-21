@@ -4198,44 +4198,44 @@ p {
     .more-than-card strong { font-size: 10px; }
     .more-than-card small { font-size: 8px; }
 
-    .mobile-navigation-links { padding: 14px 16px 95px; }
+    .mobile-navigation-links { padding: 14px 16px 70px; }
     .mobile-navigation-links > a, .mobile-products-menu > button { padding: 12px 4px; font-size: 14px; }
     .mobile-category > button { padding: 10px 4px; font-size: 12px; }
     .mobile-subcategory-list a { padding: 6px 4px; font-size: 11px; }
 
     .mobile-quick-actions {
         position: fixed;
-        left: 10px;
-        right: 10px;
-        bottom: 10px;
+        left: 12px;
+        right: 12px;
+        bottom: 8px;
         z-index: 9500;
         display: grid;
         grid-template-columns: repeat(4,1fr);
-        padding: 6px;
+        padding: 4px;
         border: 1px solid rgba(0,0,0,.08);
-        border-radius: 17px;
+        border-radius: 14px;
         background: rgba(255,255,255,.96);
         backdrop-filter: blur(14px);
         -webkit-backdrop-filter: blur(14px);
-        box-shadow: 0 12px 40px rgba(0,0,0,.16);
+        box-shadow: 0 6px 20px rgba(0,0,0,.12);
         transform: translateZ(0);
         -webkit-transform: translateZ(0);
         will-change: transform;
     }
     .mobile-quick-actions a, .mobile-quick-actions button {
         min-width: 0;
-        padding: 6px 2px;
+        padding: 4px 2px;
         display:flex;
         flex-direction:column;
         align-items:center;
         justify-content:center;
-        gap:3px;
+        gap:2px;
         background:transparent;
         color:#666;
-        font-size:8px;
+        font-size:7px;
         font-weight:700;
     }
-    .mobile-quick-actions i { font-size:15px; color:var(--orange); }
+    .mobile-quick-actions i { font-size:12px; color:var(--orange); }
     .mobile-quick-actions a:last-child i { color:#25d366; }
 }
 
@@ -4582,4 +4582,83 @@ p {
     .mobile-sheet-category-text small {
         font-size: 6.5px;
     }
+}
+
+
+/* =========================================================
+   MOBILE VIEW FIX (2026-08-21)
+   1) Hide/collapse the fixed bottom quick-action bar on mobile.
+   2) Force the slide-in mobile nav drawer to sit ABOVE the
+      page as a true full-screen overlay instead of sitting
+      side-by-side with the hero content. The side-by-side
+      look happens when this drawer is nested inside an
+      ancestor that has backdrop-filter (here: .main-header) -
+      backdrop-filter/filter create a new "containing block"
+      for position:fixed children, so right:0/top:0 stop being
+      relative to the real viewport. We escape that here and
+      also add a dedicated dark backdrop + scroll lock so the
+      drawer behaves like a normal overlay regardless of where
+      it lives in the markup.
+   ========================================================= */
+
+/* 1) Collapse the bottom quick-actions bar entirely. */
+.mobile-quick-actions {
+    display: none !important;
+}
+
+/* 2) Full-screen overlay drawer, escaped from any filtered ancestor. */
+.mobile-navigation {
+    position: fixed !important;
+    top: 0 !important;
+    left: auto !important;
+    right: -100% !important;
+    bottom: 0 !important;
+    width: min(400px, 100vw) !important;
+    max-width: 100vw !important;
+    height: 100dvh !important;
+    height: 100vh !important;
+    margin: 0 !important;
+    float: none !important;
+    flex: none !important;
+    display: block !important;
+    /* new stacking context, independent of ancestor filters */
+    isolation: isolate;
+    z-index: 99000 !important;
+}
+
+.mobile-navigation.active {
+    right: 0 !important;
+}
+
+/* Dark backdrop behind the drawer so it reads as an overlay,
+   not a second column of content. If the page already toggles
+   a class on <body> (e.g. body.menu-open) when the drawer
+   opens, this backdrop shows automatically - no JS change
+   needed. */
+body.menu-open::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 8999;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+/* Belt-and-suspenders: if any ancestor of .mobile-navigation
+   still has backdrop-filter/filter/transform applied, that
+   ancestor is what's clipping the drawer to its own box on
+   some browsers. Scoping the visibility fix's blur to only
+   the scrolled state (instead of always-on) removes that
+   containing block on first paint, which is when the drawer
+   is most commonly toggled open from the top of the page. */
+.main-header {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.98);
+}
+
+.main-header.scrolled {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
